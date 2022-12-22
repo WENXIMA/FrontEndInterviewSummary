@@ -1,0 +1,9 @@
+JS Method:
+    - sort() Method
+        - Array.sort((a,b) => {a-b}) 
+        - This method allow sort array as ascending order
+
+    -forEach() Method
+        - forEach similar to forLoop
+        -Can not modify the sets in the object
+        -forLoop can receive the index
