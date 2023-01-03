@@ -1,0 +1,9 @@
+
+1. Center the item 
+<div class=outer>
+    <div class=inner>
+
+1. Use (display: flex) in outer
+And make margin: auto in inner
+
+2. Use display: flex, algin-items:center, justify-content:center

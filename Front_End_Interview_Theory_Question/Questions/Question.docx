@@ -1,0 +1,17 @@
+React:
+1. What is React Hooks?   What is the pros and cons? 
+    -Ans: React Hook:
+          React Hook allow developer hooked in React state and life cyle function.Such as useState,useEffect
+          React Hook allow developer use state and other react features without writing Class
+          Makes the related part in each component to smaller part
+
+          Pros:
+                -Easier to test and work with, easy to read.
+                -Create re-usable component to avoid redunant logic
+          Cons:
+                -hooks do not allowed to mix old classes of component.
+                -Do not have a way to attach reusable behavior to reusable state
+
+JavaScript:
+1.
+            
