@@ -1,4 +1,17 @@
 React:
+
+-useEffect Method
+    - useEffect(()=>{},[]). Render ONLY once after the inital render of the component.
+
+-React re-render() when: 1. state update
+                        2. props update
+                        3.parent component has been re-render
+
+-memo() => higher order component
+    - React will skip rendering the component, re-use last rendered result
+    -ONLY check props component
+
+
 1. What is React Hooks?   What is the pros and cons? 
     -Ans: React Hook:
           React Hook allow developer hooked in React state and life cyle function.Such as useState,useEffect
@@ -11,7 +24,91 @@ React:
           Cons:
                 -hooks do not allowed to mix old classes of component.
                 -Do not have a way to attach reusable behavior to reusable state
+2. What is useEffect, useState, useContext?
+      - useEffect: 
 
 JavaScript:
-1.
-            
+      Method:
+        - sort() Method
+        - Array.sort((a,b) => {a-b}) 
+        - This method allow sort array as ascending order
+
+    -forEach() Method
+        - forEach similar to forLoop
+        -Can not modify the sets in the object
+        -forLoop can receive the index
+
+    -concat() Method
+        - Merge 2 array into 1 Array
+        -Time complexity O(N)
+    
+    -splice() Method
+        - splice(start,deleteCount,InsertItem);
+        -months.splice(4, 1, 'May');
+        - replaces 1 element at index 4
+    
+    GET vs POST:
+        - POST are focus on CRUD function. GET is READ ONLY.
+        - POST do not have restrict while passing the index from URL. GET do have limit
+        - POST will not pre-load by browser unless manually set up. GET will pre-load by broswer.
+    
+    Set Method:
+        - Set allow store UNIQUE of any types data(ONLY DATA).
+        - Set.add -> add element to end of Set
+        - Set.clear -> clear all element of this Set
+        - Set.delete(value) -> Delete value from Set, Return boolean value.
+        - Set.has() -> Return boolean value to check this value exists or not.
+
+
+
+1. VAR vs LET vs CONST:
+        - variable scope is different.
+        - talk about your general rule on which to use in common cases. 
+            (let are defined inside of function which this variable only called inside of function, const are usually store array object, not use var usually.)
+        - VAR can be re-delcared and updated
+        - LET is block scope, can be updated but NOT re-declared
+        - const can not be updated or re-declared.
+            -if const store object, even though we can not updated. but, we can update the attribute of the object.
+
+2. Explain 'async' and 'await'
+        - it allow us to write more eaiser method based on Promise async.
+            - we do not need to call Promise.
+        - Return Promise
+        - I use promise to set up the firebase Auth Method
+            - For example, when user want to sign out, then it will call the signOut Method.
+               This signOut method is async function which it will await for firebase signOut(method) to be called,
+               after firebase signOut has been called, this function will be execute
+               
+3. Deep Copy vs Shallow Copy
+        - Deepy Clone means that all values of the variables are copied and disconnected from the original variable.
+        - Shallow Copy means that certern values are still connected to the original variables. Create a new Object, Copy data types/store address. ONLY clone object space not resource
+
+
+CSS:
+
+
+1. What is CSS box model?
+      - CSS box include margin, border, padding and content.
+            -Total width = width + margin (left+right) + padding (left/right) + border(left/right)
+      -box sizing attribute
+            - content box: 
+            - border-box: set height and width of element
+            -inherit: inherit parent element box-sizing value
+
+2. Implement a 2 Grid:
+    - set a parent class and two box are inside of this div
+    - set parent div display: flex
+    - set height and width of two box and set second box flex:1
+      
+
+Webpack:
+
+1. What is webSocket?
+      - Implement two way communication between Client side and server side such as passing data.
+      -pros: 
+            - No same resouce limitation
+            - Two way communication
+      - cons:
+            - more stable code in back end.
+            - higher cost for maintance.
+
