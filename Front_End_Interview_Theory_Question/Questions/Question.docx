@@ -27,6 +27,17 @@ React:
 2. What is useEffect, useState, useContext?
       - useEffect: 
 
+3. How could you do to improve performance in React?
+        - Using React.PureComponent, React.memo, React.shouldComponentUpdate
+                - PureComponent will shallow compare to props and state
+                - Memo will shallow compare for props.
+                -shouldComponentUpdate will figure state and props updated. If updated return true, Otherwise return false.
+
+
+Vue:
+    1. What is LC of Vue?
+            - beforeCreate->Create->beforeMount->Mounted->BeforeUpdate->Updated->BeforeUnmounted->Unmounted
+
 JavaScript:
       Method:
         - sort() Method
@@ -58,7 +69,12 @@ JavaScript:
         - Set.clear -> clear all element of this Set
         - Set.delete(value) -> Delete value from Set, Return boolean value.
         - Set.has() -> Return boolean value to check this value exists or not.
-
+    
+    Map vs Object vs Set vs Array
+        - Array: It is not basic type of JavaScript. Size are flexble, it can contain different types of data. copy array is shallow copy.
+        - Map: Collections of key-value pairs. A key only occur in Map once. Map is ordered and iterable
+        -Object: It is similar to map. But the difference is object is not ordered and iterable
+        -Set: Set are collections of values. A value may ONLY occur once in the Set.
 
 
 1. VAR vs LET vs CONST:
@@ -72,8 +88,8 @@ JavaScript:
 
 2. Explain 'async' and 'await'
         - it allow us to write more eaiser method based on Promise async.
-            - we do not need to call Promise.
-        - Return Promise
+            -Return Promise.
+        - When function executed, it will return when meet the await.After complete the async, then continue the function. (Most likely, jump out of async function, give the thread temporarily ) 
         - I use promise to set up the firebase Auth Method
             - For example, when user want to sign out, then it will call the signOut Method.
                This signOut method is async function which it will await for firebase signOut(method) to be called,
@@ -83,13 +99,57 @@ JavaScript:
         - Deepy Clone means that all values of the variables are copied and disconnected from the original variable.
         - Shallow Copy means that certern values are still connected to the original variables. Create a new Object, Copy data types/store address. ONLY clone object space not resource
 
+4.What is Event Delegation?
+        - Event Delegation can aviod too many event listeners.
+        - It is process of using single event listener from parent element  to manually delegation to child element instead of using event listener in every child element.
+
+5.Difference between map and forEach?
+        - map are similar to forEach method: Executes the provided function once for each element in array.
+        -But unlike the forEach, it creates a new array to store the results.
+
+6. How does instanceOf works? Difference with TypeOf.
+        - InstanceOf checks the prototype of constructors from bottom to top until it meet null. 
+        - typeOf can not figure out the object, array, and null. It will return OBJECT when typeOf meet those 3 types.
+        -instanceOf is able to figure out type of object, array and null. But instanceOf can not figure the basic type of data.
+
+7. Explain 'new' operator in JS. (01-04, Question 60)
+        - Create a value of object is null and set the prototype chain is null.
+        - Using apply to use the constructor function, and point THIS to the object just created.
+        - modified the proto of object, point constructor's prototype.
+        - If there is a value can be return then return it, otherwise return object. 
+
+8. Explain Event Loop?
+        - JavaScript is single thread. Broswer is multi-thread.
+        - All synchronous are execute in main thread. Generate a execution stack.
+        - Other than main thread, There is a task queue. Once the async task has the result, then it will be marked in task queue.
+        - Read the task queue after main thread complete all tasks. Event loop will clear the microtask.
+        - It will goes in macrotask after the microtask has been clear. Pick the first task into stack to execute. After executed,
+            - Check the microtask again, if there still has more tasks then clear microtask. Repeat this step until all tasks has been completed.
+
+9. Explain microtask and macrotask
+        - macrotask: event are waiting for execution in the task queue. macrotask will create a new stack while it executing task. After the macro task completed. this stack will destoryed as well. (setInterval, setTimeOut)
+        - microtask: Trade it like a async function. It will execute before macrotask complete and after main function executed.
+
+10.Debounce and Throttle.
+        - Debounce: Debounce only execute the latest time. Debounce will not execute later function after the function has bounce in set time.(Using setTimeOut, clearTimeOut)
+        - Throttle: Throttle will control times of execution. 
+
+11. NodeJS pros and cons:
+        - Pros: 
+                -Develop based on JavaScript, its easier to learn
+                -NPM package is powerful tool to make development process easier
+                -Share same pieces of code with client and server side
+        -Cons:
+                - NodeJS does not provide scalability
+                - Its hard to connect with relational db.
 
 CSS:
 
 
 1. What is CSS box model?
-      - CSS box include margin, border, padding and content.
-            -Total width = width + margin (left+right) + padding (left/right) + border(left/right)
+      - 2 types of box: block box and inline box
+      - block box: Every box will change the line, padding, margin and border will push other element away. Width and height are works under block box.
+      - inline box: Box will not change the line. Width and height will not works. Vertical padding, margin and border will works and not push away other inline box. but horizontal will push away other inline box
       -box sizing attribute
             - content box: 
             - border-box: set height and width of element
@@ -99,8 +159,18 @@ CSS:
     - set a parent class and two box are inside of this div
     - set parent div display: flex
     - set height and width of two box and set second box flex:1
-      
 
+3.Explain how different CSS 'position' porperty worked.
+    - position have static, absolute, relative, fixed and sticky.
+    - static: do nothing.
+    -relative: Delete from document flow,  it stay at his place. the element still can move top/bottom/left/right by its place.
+    - absolute: removed from document flow, but it losts his place. Move it by top/bottom/left/right by parent which has relative rule. Create a new stacking context when value of z-index is not auto.
+    - sticky: positioned according to the flow of the document. Stick it to speific corrdinates. it lives inside of parent and moves with parent element.
+    -fixed: removed from document flow as well. position relative to the initial containing block established by viewport. 
+
+4. Difference between block and inline.
+    - Display block: Goes vertically, get the all width, width/height can be settled.
+    - Display inline: Goes horizontally, width/height equal to content. width/height can not be settled.
 Webpack:
 
 1. What is webSocket?
@@ -112,3 +182,52 @@ Webpack:
             - more stable code in back end.
             - higher cost for maintance.
 
+2.How HTTP works? What is HTTP/2?
+        - HTTP is a protocol for fetching resource such as HTML document.
+        -It is the foundation of any data exchange on Web. It is a client serve portocol which means it require a initiated by the recipient.
+        -HTTP/2 makes our application faster, simpler. The primary goals for HTTP/2 are to reduce latency by enabling full request and response multiplexing., minimize protocol.
+
+3. Explain connection: Keep-alive
+        - Keep alive: keep this page active, the input content will not removed after user transfer to other page.
+
+4.What happens when you type in a URL.
+        - Enter a URL into web broswer.
+        - Browser looks up the IP address for the domain name via DNS.
+        - Broswer will send HTTP request to server
+        - Server send back HTTP response
+        - Broswer begin rendering in HTML
+        - Broswer send request for additional objects embedded in HTML such as JS and CSS. Repeat Send request from broswer to server. And server send the response back to broswer. And Render HTML again.
+        - After page loaded, broswer send further async request as needed.
+
+5.What is HTTP cache? How does it works?
+        - Large responsive needs to return between broswer and server side
+        - It will not load before all key resources has been download.
+        - All HTTP request will transfer to broswer cache to check satsify the condition for avaiable cache response. If matched, then get the response from cache to reduce the internet delay and transfer cost.
+        
+6. What is CDN?
+        - CDN allow transfer and load needed resource for broswer content inclduing HTML, JS. Bootstrap offer CDN link to allow developer use their library easier.
+
+7.How to detect crash of web page?
+        -Generally, onBeforeUnload() will know right before a page unloaded. 
+        -But when web page crash, JS can not run. So, Using service worker to ping the main thread. trigger a dialog to ask user want to leave or not. 
+
+8.Common question: What is CSRF? How to prevent it?
+        - Cross site request forgency is use to send malicious request from authenticated user to web application.
+        -When user send request, attackers can lanuch CSRF to attack that abuse the trust between user and web server.
+        -How to prevent: 
+                - Implement anti-CSRF token.
+                -Use the SameSite Flag in Cookies.
+
+9.Common HTTP Code:
+        - HTTP 100 -> Information response.
+        - HTTP 200 -> Successfully response.
+        - HTTP 300 -> Redirection response.
+        - HTTP 400 -> Client Error.
+        - HTTP 500 -> Server Error.           
+
+10. What is XSS?(Cross-site scripting)
+        - XSS are allow attackers to inject to website malicious client-side code. 
+        - Execute by user, attacker will feak as user to bypass access controls.
+        -How to prevent:
+                - Safe sink attribute in HTML to treat variables as text and never execute.
+                - HTML Sanitization strip dangerous HTML from variable and return a safe string of HTML
