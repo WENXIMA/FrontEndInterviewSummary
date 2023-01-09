@@ -25,7 +25,22 @@ React:
                 -hooks do not allowed to mix old classes of component.
                 -Do not have a way to attach reusable behavior to reusable state
 2. What is useEffect, useState, useContext?
-      - useEffect: 
+      - useEffect:
+                -  useEffect will triggerd by every render. So Every time the page has been render, useEffect will be trigged to exectued side Effect.
+                -  It may contain 2 index, Once the second index has been changed, then the system will execute the side function to re-render.
+                - If 2nd index is empty array, then it will means that this useEffect will only render once.
+               
+      - useState: 
+                - return state and stateUpdate function
+                - In the beginning of render, it will return state and initialState
+                - setState are using to update state. It will receive a new state and re-join the render queue
+                - In later render queue, useState return first value will always be the newest state(has been updated)
+        
+        -useContext:
+                - React is 1 way data-flow, it only can pass data from props 1 by 1.
+                - Use useContext to create a context in component which needs to pass the data.
+                - If the data need to pass, then we need to have a context Name with provider including the child component/value. and in the context.provider tag, we also need a value attribute to pass data.
+                - The component which accpeting data needs to import the context to use context.consumer to receive it, it possible to receive a function
 
 3. How could you do to improve performance in React?
         - Using React.PureComponent, React.memo, React.shouldComponentUpdate
@@ -33,10 +48,65 @@ React:
                 - Memo will shallow compare for props.
                 -shouldComponentUpdate will figure state and props updated. If updated return true, Otherwise return false.
 
+4.What is React fiber? 
+        - The core of work is destructure one work to a lot of ones and switch between them to complete.
+        - Fiber is a JS object.
+        -Fiber improves performance, better suitability for advanced UI.
 
+5.What is Virtual DOM?
+        - Virtual DOM is a programming concept. UI is store in memory by ideal. Using ReactDOM to sync with Real DOM.
+        - Virtual DOM gives React delcartive API which means what types UI does developer want, React will make sure the DOM match this state.
+
+6.What is Higher Order Component?(HOC)
+        - HOC transform component into another component.
+        - HOC is function and take component and return a new component.
+        - Each HOC will not dependent to another HOC.
+        - Poorly readable.
+        - props change every time, it will re-render again. Hence, it probably has performace issues.
+
+7.What is Pros and Cons of Redux?
+        -Redux is similar to useContext. Redux is a library that using action to manage and control state.
+        - Pros:
+        -No longer to write many state controls to manage state for each function.
+        - state is immutable
+        - Easier to test
+        - 1 state for entire application
+        - Cons:
+        - Re-render all component once state changes.
+        - Over use memory.
+        - Remember I was using redux to doing state management for shopping cart, User can add/remove items from actual shopping page, 
+        - and there is a short summary of your shopping cart in right corner. User also can modifiy their shopping cart through toggle window in navigation bar.
+        - And, finally when they got into the payment page, they also can modifiy their shopping cart state.
+        - So, I would choose Redux instead of useContext to update and manage the shopping cart state in 3 different places.
+        - But, I would like to use useContext to manage the authentication method during the project. Because, there are only sign in/ reigster and log out.
+        - We do not need to use redux. It much more easier way to manage the user state at this time.
+
+8. What is React SSR? 
+        - There are 2 types render way of React:
+                - SSR:
+                        - Broswer request HTML
+                        - Page can be viewed but not avaiable.
+                        - Broswer request JS.
+                        - Page are avaiable.
+                - CSR:
+                        - Borswer request HTML
+                        - Broswer request JS
+                        - React initialization, listen event
+                        - Page avaiable
+                -Pros of SSR:
+                        - Faster than CSR, It will be faster than CSR in the first render. Because, SSR only need to request 1 HTML to show entire page.
+                        - Use SSR in first render, other than that we will choose CSR
+                -Cons of CSR:
+                        - Server side are under pressure(facing HTML render and data request)
+                        - Higher study cost, more complexity.
+                
 Vue:
     1. What is LC of Vue?
             - beforeCreate->Create->beforeMount->Mounted->BeforeUpdate->Updated->BeforeUnmounted->Unmounted
+    2. What is keep-alive in Vue?
+            - keep-live is build-in component which allows developer to conditionally cache component instance when dynamically switching between multiple componenets.
+            - For example, I built a coach finder app with vue in before, user can contact their interests coach by enter basic information.
+            - So, I keep the contact page keep-alive for just in case, user forget coach's information to take a look and switch back, the previous information which they enter are still in there.
 
 JavaScript:
       Method:
@@ -143,6 +213,29 @@ JavaScript:
                 - NodeJS does not provide scalability
                 - Its hard to connect with relational db.
 
+12.How garbage collection works in JS?
+        - garbage collection works automatically, we can not force/prevent it.
+
+13.What is memory leak? How to debug and prevent it?
+        - Memory is not needed by web application any more, but for some reason it does not return to pool of memory.
+        - using Chrom Dev Tools to debug and prevent it.
+
+14.What are WeakSet and WeakMap?
+        - WeakSet can not traverse, only store data of object type. It will not stop the garbage collection to collect object from WeakSet.
+        - WeakMap is only receive object as key. can not traverse as well.
+
+15.When do we need strict mode?
+        - strict mode indicate that code can not use undeclared variables.
+        - When we are complie old JavaScript code.
+        - The JavaScript code genereated by 3rd party.
+        - Different version and types of broswer
+
+16.What is difference between setTimeOut and setInterval?
+        - setTimeOut will run function ONCE after the interval of time.
+        - setInterval will run function repeatedly starting after the interval of time then, repeating continuously at that interval.
+
+17. 
+
 CSS:
 
 
@@ -171,7 +264,28 @@ CSS:
 4. Difference between block and inline.
     - Display block: Goes vertically, get the all width, width/height can be settled.
     - Display inline: Goes horizontally, width/height equal to content. width/height can not be settled.
-Webpack:
+
+5.What is Pesudo-Class and Pesudo-Element?
+        - Pesudo-Class is key word added to a selector that specifies a special state of the selected elements. such as :hover/:enabled
+        - Pesudo-Element is key word added to selector that lets you style specifies part of the seleceted elements, such as p::first-line
+
+6. How to implement lazy load for images?
+        - using attribute loading and set the value is lazy
+
+7.How does @import works in CSS? What is the pros and cons
+        - In CSS file, if there are many @imports.
+                - Then, the system will download the parent file first and then it will download these import file later
+        Pros:
+                - Make code more readable. Do not need to write same code for each files.
+                - It provide help when building medium to large website, because there are too many information. It could be messed up. using @import to aviod this kind situation
+        Cons:
+                - @import will increase the loading page time.   
+
+8. How to create triangles with CSS?
+        - border width: 0; height: 0; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 50px solid red; margin: 2rem
+        
+
+Web:
 
 1. What is webSocket?
       - Implement two way communication between Client side and server side such as passing data.
@@ -231,3 +345,60 @@ Webpack:
         -How to prevent:
                 - Safe sink attribute in HTML to treat variables as text and never execute.
                 - HTML Sanitization strip dangerous HTML from variable and return a safe string of HTML
+
+11.What are Web Worker and Service Worker?
+        - Web Worker means for web content run scripts in background threads.
+                -The worker thread can perform tasks without interfering with the UI.
+        - Service Worker: act as proxy servers that sit between application, broswer and network.
+
+12.What is Webpack loader and plugin?
+        - Loader is function, only cares about input and output.
+                - Loader works between generating bundle and before generateing it.
+                - Does not dependent Event
+        - Plugin is a class
+                - Plugin works ends of bundle generate.
+                - Plugin dependent on events.
+
+13. Explain Common HTTP request methods? What they used for?
+        - GET: request representation of speific data.
+        - POST: submit entire specified resource to server. Often change the state.
+        - PUT: Replace all current representation of the target resource with request payload
+        - PATCH:  Applies all partical modification to resource
+        - DELETE: Delete speific resources
+
+General: 
+
+1.  Tell us the difference between common image format on the web
+        - PNG:
+        - JPG:
+        - JPEG:
+        - WEBP:
+
+2.Explain Proxy Pattern, Decorator Pattern, Factory Pattern, Observer Pattern
+
+3.How do you do unit test/ EndToEnd test in your web projects?
+        - React-Testing-library
+        - JestJS
+        - End to End test means that we need to test entire web application from view of user.
+                - Analyze requirements
+                - Set up test environment
+                - Analyze software and hardware requirements.
+                - List down what system needs to respond.
+                - List testing methods required to test
+                - Design test cases
+                - Run test
+        - Unit Test
+                - Initialize small pieces of an application which wants to test
+                - Calling method
+                - Observes the resulting behavior
+
+4.How do you do SEO in your porject?
+        - Set goals with clients
+        - Identify what need to achieve goal
+        - Take a brief outline for task which we need to complete.
+        - Track projects progresss.
+        - For SPA SEO:
+                - We need to use server-side rendering or pre-rendering
+                - Then we need to use SEO friendly URL.
+                - Last, we will need to test SPA SEO.
+

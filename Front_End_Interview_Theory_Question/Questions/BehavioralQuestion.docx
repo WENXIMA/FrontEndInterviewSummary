@@ -1,10 +1,13 @@
+Speaking follow SOAR Model => Situation -> Obstacles(障碍) -> Action -> result
+
 1. Tell me about yourself.
     - My name is Wenxi Ma. You can just call me jason. 
       I complete my computer science and economics degrees at University of ottawa.
-      My interest is front end developing. I love to create beautiful and performant products with delightful user experience
+      My interest is front end developing.
       I worked at inspiration technology as my internship while I was a student.
       My mainly working on design and upgrade user interface and user experience within a team of 4.
       I am interested in the front end developer role at your company because I love to creating and design products to improve client experience.
+      My technology strength are create reusable components single page application with HTML5, CSS3, JavaScript and React.
 
 2. What is your strength and weakness?
     - Clear about yourself and ALWAYS trying to improve.
@@ -13,3 +16,156 @@
 3.What is best gift you have ever given or received?
     -Think of a moment that changed your life and extend on that. Think of the person you love the most or feel grateful, etc.
 
+
+
+4. Tell me about a time that you failed
+    - you made mistakes but you never make same mistakes twice
+    you could make things even better after the mistakes
+    you don't hide mistakes, you think about the whole picture
+
+
+
+5.Tell me a time you achieved something through good collaboration
+    - you met the problem but you couldn't solve it by yourself
+    you collaborated with other members, but it was hard
+    you talked with other members, found the cure and everything became smooth
+    got great outcome, you were highly evaluated, the teamwork was perfect.
+
+
+
+6. Tell me a time you handled conflict.
+    - When facing conflicts, you'd better see the whole picture, sometimes it is good to persuade others, sometimes it is not, depends on the situation.
+      Tell the interviewer your general rule, and prepare for this with a solid real case to show your unique value
+    
+
+
+7. How do you give and receive feedback?
+    -  there are multiple ways to give feedback, in the company review system, talk privately , talk in public, or talk to his/her boss, .etc.
+       Which is the best depends on the situation and your relationship.
+    
+
+
+8. What is the best advice you have received?
+    - It better be related to your proficiency of your job.
+    - I remember that my dad told me before my first day of the work.
+    - Never think that you are doing enough, There must be something you still can do.
+    - He told that Even though, you have already finished your work. Why dont try to think about how to improve it?
+    - What suggestion or what kind of help you can provide to your teammates?
+    - Why not discss with your lead about the finished work and further plan of it, to have more prepare for next movement.
+    - Thats helps me a lot in my life, not only in the work but also in the school and life. 
+
+
+
+9. Why us?
+    - It is good to be ambitious, not good to be greedy (on money) or whatever.
+    Investigate the company's business model and culture, ask yourself why you want to join them.
+    It better be on yourself's future but not about the compensation.
+    Don't say bad words about your current employer, interviewer might follow up on that.
+
+9.A Why Front End?
+    - The reason why I choose front end developement, Because, I found out that sometimes there are some type of website are make user confused.
+      Even though, I know that this is a trusted site to fill out my information, but the UI design are make me doubt is this a real website?
+      Hence, I decide to try learn about how to design and create a web page by my own and from university. Then, I realized that this field is amazing, 
+      there are lots of things which i need to learn in this field.
+      Every time, I complete something even is a small features, I will be so exicted.
+
+10. Can you do a retrospective on your current project?
+    - list up the achievements your teams have done in this project
+      list up the improvements you plan to do, with priority
+
+
+
+11. Tell me a time you handled pressure.
+    - 
+
+
+12.Tell me a goal you set and you managed to achieve.
+
+
+
+13. Tell me a goal you set but couldn't manage to achieve.
+    - interviewers want to believe you can do the evaluation with reason, and you are able to adjust the goal accordingly.
+
+
+
+14.Tell me a time you acted beyond your responsibility.
+    - Interviewers want to believe you take the ownership and are self-motivated.
+
+
+
+15. How do you handle a challenge?
+    - You must have a general methodology to every challenge. Interviewers want to believe you can handle any challenges, or at least have approaches.
+
+
+
+16. Tell me a time you motivated yourself and your team members.
+
+
+
+17. What is that your team upset you the most?
+    - Don't say things too personal. Better mention things about the team culture, and let interviewers know that you are already trying improve it with clear plans.
+
+
+
+18. Your decision proved to be wrong, how do you receive feedback?
+    - Everyone makes mistakes. Just don't make same mistake twice.
+    - Be modest, Be objective and don't take it personal when receiving feedback.
+
+
+
+19. What would you do if your progress is dragged own by other teams?(big company)
+    - Interviewers want to see you take ownership, when delay happens, don't just wait but try yourself to push the project forward even it is not your responsibility.
+    - Try to keep everyone informed of each other's progress, find the risk as early as possbile.
+
+
+
+20. What teams you want to be working in?
+    - If you have a clear goal about the teams, just say the name and talk about why. If you don't know what teams there are, investigate before interview, and set up general expectations.
+
+
+
+21. Tell me a time you disagreed with your supervisor.
+    - Interviewers wants to believe you can speck out your thought, not a yes man.
+
+
+
+22.  Tell me about your current role.
+    - Do mention your team's effort, but also emphasize on the unique contributions made by you.
+
+
+
+23. What's the most challenging thing you've done? (similar to No15)
+
+
+
+24. Which environment is best to you to work
+    - Talk about the company culture you've longed for. Let interviewers believe that you are a team player, likes the challenge.
+
+
+
+25.Tell about most important decision in your life.
+    - This is not about working skills any more. Interviewer wants to believe that you are a retrospective person and act with principals.
+
+
+
+26. What is the newest web technique that you are interested in.
+    - Web3, block chain, TAO community related to future evoluation of web industry
+
+
+
+27. Tell me about your project experience?
+    - I create a commerce shopping site as my project.
+    - This project is based on ReactJS and styling by SASS.
+    - This project contains that user authentication method including log in, register and sign out support by firebase. User state managed are implement by useContext method.
+    - Once user register in, their data will store into real time database in firebase
+    - User are able to add different types products to shopping cart. Also, they can modified the quantity or remove this product from toggle window or payment page.
+    - In further, the UI needs to be upgraded to have hover animation. And User home page, User will be able to see their history order.
+
+
+
+Chelsea avondale:
+    - Company Culture:
+        - integrity
+        - fairness (trade every team member fair)
+        - be honest
+        - empathy (care about others feelings)
